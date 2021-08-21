@@ -1,5 +1,24 @@
-export const register = (req, res, next) => {
-  res.send('register Route')
+import User from '../models/User'
+
+export const register = async (req, res, next) => {
+  const { username, email, password } = req.body
+
+  try {
+    const user = await User.create({
+      username,
+      email,
+      password
+    })
+    res.status(201).json({
+      success: true,
+      user
+    })
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message
+    })
+  }
 }
 
 export const login = (req, res, next) => {
