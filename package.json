@@ -6,10 +6,16 @@
   "author": "田原 一樹",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
     "esm": "^3.2.25",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongodb": "^4.1.0",
+    "mongoose": "^5.13.7",
+    "nodemon": "^2.0.12"
   },
   "scripts": {
-    "start-server": "node -r esm ."
+    "start-server": "node -r esm .",
+    "dev": "nodemon -r esm"
   }
 }
